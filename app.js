@@ -13,9 +13,16 @@
 // command: npm init (step by step, press enter to skip)
 // command: npm init -y (everything default)
 
-const _ = require('lodash');
+const {readFile} = require('fs');
 
-const items = [1,[2,[3,[4]]]];
-const newItems = _.flattenDeep(items);
-console.log(newItems);
-console.log('hello world!');
+console.log('started a first task');
+
+readFile('./content/first.txt', 'utf-8', (err, result)=>{
+    if(err){
+        console.log(err);
+    }
+    console.log(result);
+    console.log('completed first task');
+});
+
+console.log('starting next task');
